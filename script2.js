@@ -8,25 +8,31 @@ window.addEventListener('load', () => {
 });
 
 // ==================== CURSOR ====================
-const cursor = document.querySelector('.cursor');
+const customCursor = document.querySelector('.custom-cursor');
 
-if (cursor) {
+if (customCursor) {
+    let cursorX = 0, cursorY = 0, rafId = 0;
+
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        if (!rafId) {
+            rafId = requestAnimationFrame(() => {
+                customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+                rafId = 0;
+            });
+        }
     });
 
-    // Hover effect
     const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .project-card, .skill-card, .tool-item');
-    
+
     interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        el.addEventListener('mouseenter', () => customCursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => customCursor.classList.remove('hover'));
     });
 
-    // Click effect
-    document.addEventListener('mousedown', () => cursor.classList.add('click'));
-    document.addEventListener('mouseup', () => cursor.classList.remove('click'));
+    document.addEventListener('mousedown', () => customCursor.classList.add('click'));
+    document.addEventListener('mouseup', () => customCursor.classList.remove('click'));
 }
 
 // ==================== NAVBAR ====================

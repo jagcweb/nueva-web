@@ -137,29 +137,78 @@ input, textarea, select {
 }
 
 /* ==================== CURSOR ==================== */
-.cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--accent-primary);
-    border-radius: 50%;
+.custom-cursor {
     position: fixed;
+    top: 0;
+    left: 0;
     pointer-events: none;
     z-index: 10000;
-    transition:  transform 0.15s ease, background 0.15s ease;
-    mix-blend-mode:  difference;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
 }
 
-.cursor.hover {
-    transform: scale(3);
-    background: var(--accent-secondary);
+.cursor-bracket {
+    color: var(--accent-primary);
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.cursor.click {
-    transform: scale(0.8);
+.cursor-open {
+    transform: translateX(-2px);
+}
+
+.cursor-close {
+    transform: translateX(2px);
+}
+
+.cursor-slash {
+    color: var(--accent-secondary);
+    font-size: 12px;
+    opacity: 0;
+    width: 0;
+    transition: opacity 0.2s ease, width 0.2s ease, color 0.2s ease;
+    overflow: hidden;
+}
+
+.custom-cursor.hover .cursor-bracket {
+    color: var(--accent-secondary);
+}
+
+.custom-cursor.hover .cursor-open {
+    transform: translateX(-5px);
+}
+
+.custom-cursor.hover .cursor-close {
+    transform: translateX(5px);
+}
+
+.custom-cursor.hover .cursor-slash {
+    opacity: 1;
+    width: 8px;
+}
+
+.custom-cursor.click .cursor-bracket {
+    color: #98c379;
+}
+
+.custom-cursor.click .cursor-slash {
+    color: #98c379;
+}
+
+.custom-cursor.click .cursor-open {
+    transform: translateX(-8px);
+}
+
+.custom-cursor.click .cursor-close {
+    transform: translateX(8px);
 }
 
 @media (max-width: 768px) {
-    .cursor { display: none; }
+    .custom-cursor { display: none; }
 }
 
 /* ==================== LOADER ==================== */
@@ -523,7 +572,6 @@ input, textarea, select {
     inset: -50%;
     background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
     opacity: 0;
-    filter: blur(40px);
     transition: var(--transition-medium);
 }
 
@@ -590,17 +638,18 @@ input, textarea, select {
 }
 
 .gradient-sphere {
-    position:  absolute;
+    position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
+    opacity: 0.4;
+    will-change: transform;
+    transform: translateZ(0);
     animation: float 20s infinite ease-in-out;
 }
 
 .sphere-1 {
     width: 600px;
     height: 600px;
-    background: var(--accent-primary);
+    background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
     top: -20%;
     right: -10%;
     animation-delay: 0s;
@@ -609,26 +658,26 @@ input, textarea, select {
 .sphere-2 {
     width: 400px;
     height: 400px;
-    background:  var(--accent-secondary);
+    background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
     bottom: -10%;
-    left:  -5%;
+    left: -5%;
     animation-delay: -5s;
 }
 
 .sphere-3 {
-    width:  300px;
+    width: 300px;
     height: 300px;
-    background: var(--accent-tertiary);
+    background: radial-gradient(circle, var(--accent-tertiary) 0%, transparent 70%);
     top: 50%;
-    left:  30%;
+    left: 30%;
     animation-delay: -10s;
 }
 
 @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -50px) scale(1.1); }
-    50% { transform: translate(-30px, 30px) scale(0.9); }
-    75% { transform: translate(-50px, -30px) scale(1.05); }
+    0%, 100% { transform: translate(0, 0) translateZ(0); }
+    25% { transform: translate(50px, -50px) translateZ(0); }
+    50% { transform: translate(-30px, 30px) translateZ(0); }
+    75% { transform: translate(-50px, -30px) translateZ(0); }
 }
 
 .grid-bg {
@@ -638,8 +687,7 @@ input, textarea, select {
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+    opacity: 0.6;
 }
 
 .hero-content {
@@ -736,14 +784,14 @@ input, textarea, select {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
     animation: glitch 4s infinite;
 }
 
 @keyframes glitch {
-    0%, 100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-    5% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transform: translate(-3px, 3px); }
-    10% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); transform: translate(0); }
+    0%, 100% { opacity: 0; transform: translate(0); }
+    5% { opacity: 1; transform: translate(-3px, 3px); }
+    10% { opacity: 0; transform: translate(0); }
 }
 
 .hero-subtitle {
@@ -882,6 +930,7 @@ input, textarea, select {
     padding: 30px;
     text-align: center;
     z-index: 2;
+    contain: layout style paint;
 }
 
 .card-glow {
@@ -932,23 +981,17 @@ input, textarea, select {
 .image-border {
     position: absolute;
     inset: -4px;
-    border: 2px solid transparent;
+    border: 2px solid var(--accent-primary);
     border-radius: 50%;
-    background: var(--accent-gradient) border-box;
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
 }
 
 /* Efecto hover en la imagen */
 .profile-img {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .profile-image:hover .profile-img {
     transform: scale(1.05);
-    filter: brightness(1.1);
 }
 
 .profile-info h3 {
@@ -1006,8 +1049,10 @@ input, textarea, select {
     border-radius: var(--radius-md);
     font-size: 0.85rem;
     font-weight: 500;
-    animation: floatCard 6s infinite ease-in-out;
+    animation: floatCard 8s infinite ease-in-out;
     box-shadow: var(--shadow-md);
+    will-change: transform;
+    contain: layout style paint;
 }
 
 .float-card i {
@@ -1017,7 +1062,7 @@ input, textarea, select {
 .card-1 {
     top: 5%;
     left:  0;
-    color: #61DAFB;
+    color: #FFFFFF;
     animation-delay: 0s;
 }
 
@@ -1065,8 +1110,7 @@ input, textarea, select {
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    animation: floatCard 8s infinite ease-in-out;
-    animation-delay: -2s;
+    contain: layout style paint;
 }
 
 .code-header {
@@ -1160,6 +1204,7 @@ input, textarea, select {
     gap: 50px;
     animation: marquee 30s linear infinite;
     width: max-content;
+    will-change: transform;
 }
 
 .marquee-content span {
@@ -1729,8 +1774,9 @@ input, textarea, select {
 
 .skills-list {
     display:  flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .skill-item {
@@ -3731,7 +3777,7 @@ input, textarea, select {
 /* ==================== PRINT STYLES ==================== */
 @media print {
     .navbar,
-    .cursor,
+    .custom-cursor,
     .loader,
     .back-to-top,
     .hero-marquee,

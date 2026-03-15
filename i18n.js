@@ -90,36 +90,42 @@ const translations = {
             current: "Actual",
             work: {
                 job1: {
-                    date: "2022 - Presente",
-                    title: "Senior Fullstack Developer",
-                    company:  "Empresa Tech Placeholder",
-                    description: "Liderazgo técnico en el desarrollo de aplicaciones web escalables.  Implementación de arquitecturas microservicios y mentoring de desarrolladores junior."
+                    date: "jul. 2022 - Presente",
+                    title: "Desarrollador web Fullstack",
+                    company:  "Digital Training (Viewnext / Cajamar)",
+                    description: "Trabajando con Viewnext dando soporte a Banco Cajamar. Desarrollo con Symfony y Angular. Uso de Jira, Jenkins y Bitbucket. Scripts de automatización en Python."
                 },
                 job2: {
-                    date: "2020 - 2022",
-                    title: "Fullstack Developer",
-                    company: "Startup Innovadora S.L.",
-                    description: "Desarrollo de plataformas SaaS utilizando Laravel y Angular. Integración de pasarelas de pago y sistemas de terceros."
+                    date: "feb. 2022 - jul. 2022",
+                    title: "Desarrollador web Fullstack",
+                    company: "E-Coordina",
+                    description: "Creación de nuevos proyectos y actualización de proyectos legados. Uso de múltiples lenguajes y frameworks: JavaScript & TypeScript (NestJS, React), PHP (Laravel), Python (Django). Creación de scripts en Python (automatización, Selenium, microservicios). Uso de Git, Docker, ESLint."
                 },
                 job3: {
-                    date: "2018 - 2020",
-                    title:  "Backend Developer",
-                    company: "Agencia Digital Creativa",
-                    description: "Desarrollo de APIs RESTful y sistemas backend con Symfony.  Optimización de bases de datos y mejora de rendimiento."
+                    date: "ene. 2022 - feb. 2022",
+                    title:  "Automatización de procesos",
+                    company: "NTT Data (Everis)",
+                    description: "Automatización de procesos para clientes y la propia empresa. Trabajo con Docker y diseñados con Node-RED (Node.js). Empleo de Selenium."
+                },
+                job4: {
+                    date: "feb. 2021 - Presente",
+                    title: "Desarrollador web Fullstack y Gestor de Plataforma",
+                    company: "Kooperador",
+                    description: "Creación de la plataforma web con HTML5, CSS3 (Bootstrap), JavaScript (jQuery + AJAX) y PHP (Laravel). Uso de librerías internas (Hash, Crypt, Mail) y externas (Invoices, Excels, Stripe). WordPress con WooCommerce, Yoast SEO, Elementor y creación de plugins propios con PHP."
                 }
             },
             education:  {
                 edu1: {
-                    date: "2014 - 2018",
-                    title: "Grado en Ingeniería Informática",
-                    institution: "Universidad Placeholder",
-                    description: "Especialización en desarrollo de software y sistemas distribuidos.  Proyecto fin de grado sobre arquitecturas cloud-native."
+                    date: "Graduado",
+                    title: "Administración de Sistemas Informáticos",
+                    institution: "Formación Profesional",
+                    description: "Grado en Administración de Sistemas Informáticos. Aprendizaje de redes, sistemas operativos, bases de datos y administración de servidores."
                 },
                 edu2: {
-                    date: "2019",
-                    title:  "Máster en Desarrollo Web",
-                    institution: "Escuela de Tecnología Avanzada",
-                    description: "Programa intensivo de especialización en tecnologías web modernas, metodologías ágiles y buenas prácticas de desarrollo."
+                    date: "Continuo",
+                    title:  "Desarrollo Web Autodidacta",
+                    institution: "Formación autodidacta",
+                    description: "Aprendizaje autodidacta de desarrollo web: HTML5, CSS3, JavaScript, TypeScript, PHP, Python, Solidity y sus frameworks asociados."
                 }
             },
             certs: {
@@ -187,35 +193,60 @@ const translations = {
             documentation: "Documentación",
             viewMore: "Ver más en GitHub",
             items: {
-                shopmaster: {
-                    category: "E-Commerce",
-                    title: "ShopMaster Pro",
-                    description: "Plataforma e-commerce completa con gestión de inventario en tiempo real, múltiples pasarelas de pago, sistema de recomendaciones AI y panel administrativo avanzado."
+                soinuka: {
+                    category: "Fullstack",
+                    title: "New-Soinuka",
+                    description: "Plataforma web completa desarrollada con Laravel."
                 },
-                artverse: {
-                    category: "NFT Marketplace",
-                    title: "ArtVerse NFT",
-                    description: "Marketplace descentralizado para creación, compra y subasta de NFTs con soporte multi-chain y royalties automáticos para creadores."
+                marketplaceEth: {
+                    category: "Blockchain",
+                    title: "Marketplace ETH",
+                    description: "Marketplace descentralizado construido con Next.js y Web3.js."
                 },
-                microcore: {
-                    category: "API REST",
-                    title: "MicroCore API",
-                    description: "Arquitectura de microservicios escalable con autenticación OAuth2, rate limiting inteligente y documentación OpenAPI auto-generada."
+                autoMessage: {
+                    category: "Bot / Automatización",
+                    title: "Auto-Message Discord",
+                    description: "Bot de automatización de mensajes para Discord desarrollado en Python."
                 },
-                dataviz: {
-                    category: "Dashboard",
-                    title: "DataViz Pro",
-                    description: "Panel de analytics interactivo con visualizaciones en tiempo real, reportes personalizables y exportación en múltiples formatos."
+                faucet: {
+                    category: "Blockchain",
+                    title: "Faucet",
+                    description: "Faucet creado con React, Solidity, Ganache, Truffle y BulmaCSS."
                 },
-                devconnect: {
-                    category: "Social Network",
-                    title: "DevConnect",
-                    description:  "Red social para desarrolladores con sistema de posts, mensajería en tiempo real, colaboración en proyectos y sistema de mentoring."
+                nasaOracle: {
+                    category: "Blockchain / Oracle",
+                    title: "NASA Oracle",
+                    description: "Oracle con Smart Contracts que consume datos de la API de la NASA. React y Solidity."
                 },
-                yieldmax: {
-                    category: "DeFi",
-                    title:  "YieldMax Protocol",
-                    description: "Protocolo DeFi para staking y yield farming con gobernanza descentralizada, auto-compound y estrategias optimizadas."
+                hotspania: {
+                    category: "Fullstack",
+                    title: "Hotspania",
+                    description: "Plataforma web desarrollada con Laravel."
+                },
+                niolshotsBack: {
+                    category: "Backend",
+                    title: "Niolshots Backend",
+                    description: "API backend para Niolshots desarrollada con Node.js."
+                },
+                niolshotsFront: {
+                    category: "Frontend",
+                    title: "Niolshots Frontend",
+                    description: "Interfaz de usuario para Niolshots desarrollada con React."
+                },
+                rescueAirdrop: {
+                    category: "Blockchain / Security",
+                    title: "Rescue Airdrop Linea",
+                    description: "Script para rescatar tokens de airdrop de Linea desde una wallet comprometida."
+                },
+                rescueHype: {
+                    category: "Blockchain",
+                    title: "Rescue Hype",
+                    description: "Herramienta de rescate de tokens desarrollada con JavaScript y Ethers.js."
+                },
+                diavla: {
+                    category: "Fullstack",
+                    title: "Diavla Hookah",
+                    description: "Plataforma web para Diavla Hookah desarrollada con Laravel."
                 }
             }
         },
@@ -225,7 +256,7 @@ const translations = {
             tag:  "Testimonios",
             title: "Lo que dicen de mí",
             subtitle: "Opiniones de clientes y colaboradores",
-            clients: "Empresas con las que he colaborado",
+            clients: "Empresas con las que he colaborado y trabajado",
             items: {
                 1: {
                     text: '"Trabajar con JagcWeb fue una experiencia excepcional. Su capacidad técnica y profesionalismo superaron nuestras expectativas.  Entregó un producto de alta calidad en tiempo récord."',
@@ -429,36 +460,42 @@ const translations = {
             current: "Current",
             work: {
                 job1: {
-                    date: "2022 - Present",
-                    title:  "Senior Fullstack Developer",
-                    company: "Tech Company Placeholder",
-                    description: "Technical leadership in developing scalable web applications.  Implementation of microservices architectures and mentoring junior developers."
+                    date: "Jul. 2022 - Present",
+                    title:  "Fullstack Web Developer",
+                    company: "Digital Training (Viewnext / Cajamar)",
+                    description: "Working with Viewnext providing support to Banco Cajamar. Development with Symfony and Angular. Use of Jira, Jenkins and Bitbucket. Automation scripts in Python."
                 },
                 job2: {
-                    date: "2020 - 2022",
-                    title: "Fullstack Developer",
-                    company: "Innovative Startup S.L.",
-                    description: "Development of SaaS platforms using Laravel and Angular. Integration of payment gateways and third-party systems."
+                    date: "Feb. 2022 - Jul. 2022",
+                    title: "Fullstack Web Developer",
+                    company: "E-Coordina",
+                    description: "Creation of new projects and updating legacy projects. Use of multiple languages and frameworks: JavaScript & TypeScript (NestJS, React), PHP (Laravel), Python (Django). Python scripts (automation, Selenium, microservices). Use of Git, Docker, ESLint."
                 },
                 job3: {
-                    date:  "2018 - 2020",
-                    title: "Backend Developer",
-                    company: "Creative Digital Agency",
-                    description: "Development of RESTful APIs and backend systems with Symfony.  Database optimization and performance improvement."
+                    date:  "Jan. 2022 - Feb. 2022",
+                    title: "Process Automation",
+                    company: "NTT Data (Everis)",
+                    description: "Process automation for clients and the company itself. Work with Docker and designed with Node-RED (Node.js). Use of Selenium."
+                },
+                job4: {
+                    date: "Feb. 2021 - Present",
+                    title: "Fullstack Web Developer & Platform Manager",
+                    company: "Kooperador",
+                    description: "Creation of the web platform with HTML5, CSS3 (Bootstrap), JavaScript (jQuery + AJAX) and PHP (Laravel). Use of internal libraries (Hash, Crypt, Mail) and external ones (Invoices, Excels, Stripe). WordPress with WooCommerce, Yoast SEO, Elementor and custom plugin development with PHP."
                 }
             },
             education: {
                 edu1: {
-                    date: "2014 - 2018",
-                    title: "Computer Engineering Degree",
-                    institution: "Placeholder University",
-                    description: "Specialization in software development and distributed systems. Final project on cloud-native architectures."
+                    date: "Graduated",
+                    title: "IT Systems Administration",
+                    institution: "Vocational Training",
+                    description: "Degree in IT Systems Administration. Learning of networks, operating systems, databases and server administration."
                 },
                 edu2: {
-                    date: "2019",
-                    title: "Master in Web Development",
-                    institution: "Advanced Technology School",
-                    description: "Intensive specialization program in modern web technologies, agile methodologies and development best practices."
+                    date: "Ongoing",
+                    title: "Self-taught Web Development",
+                    institution: "Self-taught",
+                    description: "Self-taught web development learning: HTML5, CSS3, JavaScript, TypeScript, PHP, Python, Solidity and their associated frameworks."
                 }
             },
             certs: {
@@ -526,35 +563,60 @@ const translations = {
             documentation:  "Documentation",
             viewMore: "View more on GitHub",
             items: {
-                shopmaster: {
-                    category: "E-Commerce",
-                    title: "ShopMaster Pro",
-                    description:  "Complete e-commerce platform with real-time inventory management, multiple payment gateways, AI recommendation system and advanced admin panel."
+                soinuka: {
+                    category: "Fullstack",
+                    title: "New-Soinuka",
+                    description: "Complete web platform built with Laravel."
                 },
-                artverse: {
-                    category:  "NFT Marketplace",
-                    title: "ArtVerse NFT",
-                    description: "Decentralized marketplace for creating, buying and auctioning NFTs with multi-chain support and automatic royalties for creators."
+                marketplaceEth: {
+                    category: "Blockchain",
+                    title: "Marketplace ETH",
+                    description: "Decentralized marketplace built with Next.js and Web3.js."
                 },
-                microcore: {
-                    category: "REST API",
-                    title: "MicroCore API",
-                    description: "Scalable microservices architecture with OAuth2 authentication, intelligent rate limiting and auto-generated OpenAPI documentation."
+                autoMessage: {
+                    category: "Bot / Automation",
+                    title: "Auto-Message Discord",
+                    description: "Discord message automation bot developed in Python."
                 },
-                dataviz: {
-                    category: "Dashboard",
-                    title: "DataViz Pro",
-                    description: "Interactive analytics panel with real-time visualizations, customizable reports and export in multiple formats."
+                faucet: {
+                    category: "Blockchain",
+                    title: "Faucet",
+                    description: "Faucet built with React, Solidity, Ganache, Truffle and BulmaCSS."
                 },
-                devconnect: {
-                    category: "Social Network",
-                    title: "DevConnect",
-                    description: "Social network for developers with post system, real-time messaging, project collaboration and mentoring system."
+                nasaOracle: {
+                    category: "Blockchain / Oracle",
+                    title: "NASA Oracle",
+                    description: "Oracle with Smart Contracts consuming data from the NASA API. React and Solidity."
                 },
-                yieldmax:  {
-                    category: "DeFi",
-                    title: "YieldMax Protocol",
-                    description: "DeFi protocol for staking and yield farming with decentralized governance, auto-compound and optimized strategies."
+                hotspania: {
+                    category: "Fullstack",
+                    title: "Hotspania",
+                    description: "Web platform built with Laravel."
+                },
+                niolshotsBack: {
+                    category: "Backend",
+                    title: "Niolshots Backend",
+                    description: "Backend API for Niolshots built with Node.js."
+                },
+                niolshotsFront: {
+                    category: "Frontend",
+                    title: "Niolshots Frontend",
+                    description: "User interface for Niolshots built with React."
+                },
+                rescueAirdrop: {
+                    category: "Blockchain / Security",
+                    title: "Rescue Airdrop Linea",
+                    description: "Script to rescue Linea airdrop tokens from a compromised wallet."
+                },
+                rescueHype: {
+                    category: "Blockchain",
+                    title: "Rescue Hype",
+                    description: "Token rescue tool built with JavaScript and Ethers.js."
+                },
+                diavla: {
+                    category: "Fullstack",
+                    title: "Diavla Hookah",
+                    description: "Web platform for Diavla Hookah built with Laravel."
                 }
             }
         },
