@@ -579,6 +579,14 @@
     /* WhatsApp flotante con los colores de la web */
     .wa-float { background: var(--surface); color: var(--accent); border: 1px solid var(--line); box-shadow: 0 12px 30px -10px rgba(0,0,0,.6); }
     .wa-float:hover { background: var(--accent); color: var(--accent-ink); }
+
+    /* La portada mantiene el filtro oscuro también en modo claro */
+    [data-theme="light"] .hero { --bg: #15151b; --ink: #f3f1f7; --muted: #b7b4c3; --line: #3c3a47; --accent: #c5b6fb; --accent-ink: #201632; background: #15151b; color: #f3f1f7; }
+    [data-theme="light"] .hero .hero-photo::after {
+      background: linear-gradient(90deg, #15151b 0%, rgba(21,21,27,.7) 30%, transparent 70%), linear-gradient(0deg, #15151b 0%, transparent 30%); }
+    @media (max-width: 760px) {
+      [data-theme="light"] .hero .hero-photo::after { background: linear-gradient(0deg, #15151b 0%, rgba(21,21,27,.88) 38%, rgba(21,21,27,.2) 62%, transparent 80%); }
+    }
 </style>
 </head>
 <body>
@@ -661,13 +669,13 @@
             <p>Desde 2021 desarrollo los cinco programas conectados del Grupo Kooperador. Y hay más.</p>
           </div>
           <div class="gallery-tools">
-            <span class="gallery-count"><strong id="gallery-current">01</strong> / 07</span>
+            <span class="gallery-count"><strong id="gallery-current">01</strong> / 06</span>
             <button class="round-button gallery-prev" type="button" aria-label="Ver trabajo anterior" disabled>←</button>
             <button class="round-button gallery-next" type="button" aria-label="Ver trabajo siguiente">→</button>
           </div>
         </div>
 
-        <div class="work-viewport" role="region" aria-label="Galería de siete trabajos; usa las flechas o desliza para recorrerla" tabindex="0" data-lenis-prevent>
+        <div class="work-viewport" role="region" aria-label="Galería de seis trabajos; usa las flechas o desliza para recorrerla" tabindex="0" data-lenis-prevent>
           <div class="work-track">
             <article class="project">
               <a class="project-visual tilt" href="https://koodice.com" target="_blank" rel="noopener noreferrer" data-cursor="Ver" aria-label="Visitar Koodice, en otra pestaña">
@@ -739,18 +747,6 @@
               <div class="project-info">
                 <div class="project-title"><h3>Edutalent</h3><span class="project-type">Educación · Recursos humanos</span></div>
                 <p>Un programa de recursos humanos y una bolsa de empleo para conectar colegios y docentes.</p>
-              </div>
-            </article>
-            <article class="project">
-              <a class="project-visual tilt" href="https://encuentramusico.es" target="_blank" rel="noopener noreferrer" data-cursor="Ver" aria-label="Visitar EncuentraMúsico, en otra pestaña">
-                <div class="browser">
-                  <div class="browser-bar" aria-hidden="true"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url">encuentramusico.es</span></div>
-                  <img src="img/encuentramusico.webp" alt="Captura de la web EncuentraMúsico" width="1200" height="750" loading="lazy" decoding="async">
-                </div>
-              </a>
-              <div class="project-info">
-                <div class="project-title"><h3>EncuentraMúsico</h3><span class="project-type">Música · Empleo</span></div>
-                <p>Una web para encontrar músicos y ofertas de empleo para músicos. Un lugar donde buscar la próxima colaboración.</p>
               </div>
             </article>
           </div>
