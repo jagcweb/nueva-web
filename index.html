@@ -1,1693 +1,310 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-theme="oscuro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JagcWeb - Desarrollador Fullstack con +6 años de experiencia. Especializado en Laravel, Symfony, React, Angular, Solidity y soluciones blockchain.">
-    <meta name="author" content="José Antonio García - JagcWeb">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>JagcWeb | Fullstack Developer</title>
-    <link rel="stylesheet" href="styles2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>José Antonio García · Programador freelance en Madrid. Software a medida</title>
+  <meta name="description" content="Programador freelance en Madrid. Software a medida para empresas: programas de gestión, control horario, webs, tiendas online y automatizaciones.">
+  <link rel="canonical" href="https://jagcweb.es/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="José Antonio García, programador freelance">
+  <meta property="og:description" content="Software a medida para tu negocio: programas de gestión, webs y automatizaciones.">
+  <meta property="og:image" content="https://jagcweb.es/img/og.jpg">
+  <meta property="og:url" content="https://jagcweb.es/">
+  <meta name="theme-color" content="#0d1524">
+  <script>
+    // Tema guardado (oscuro por defecto), antes de pintar para evitar parpadeo
+    try { var t = localStorage.getItem("tema"); if (t === "claro" || t === "oscuro") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "José Antonio García Carmona",
+    "jobTitle": "Programador freelance",
+    "url": "https://jagcweb.es/",
+    "image": "https://jagcweb.es/img/jose-antonio.jpg",
+    "email": "mailto:hola@jagcweb.es",
+    "telephone": "+34666225457",
+    "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+    "sameAs": ["https://www.linkedin.com/in/jagcweb/", "https://github.com/jagcweb"],
+    "knowsAbout": ["Laravel", "Symfony", "Angular", "React", "Python", "Node.js", "Java Spring Boot", "WordPress", "CRM", "Control horario", "Verifactu"]
+  }
+  </script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <span class="bracket">&lt;</span>
-                <span class="logo-name">JagcWeb</span>
-                <span class="bracket">/&gt;</span>
-            </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-            <p class="loader-text" data-i18n="loader.text">Cargando portafolio...</p>
-        </div>
-    </div>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
 
-    <!-- Cursor -->
-    <div class="custom-cursor">
-        <span class="cursor-bracket cursor-open">&lt;</span>
-        <span class="cursor-slash">/</span>
-        <span class="cursor-bracket cursor-close">&gt;</span>
-    </div>
-
-    <!-- Navegación -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">Jagc<span class="logo-highlight">Web</span></span>
-                <span class="logo-bracket">/&gt;</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active" data-i18n="nav.home">Inicio</a></li>
-                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre mí</a></li>
-                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
-                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
-                <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonios</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
-            </ul>
-            <div class="nav-right">
-                <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">
-                    <span class="lang-flag">🇪🇸</span>
-                    <span class="lang-code">ES</span>
-                </button>
-                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <a href="#contact" class="nav-cta">
-                    <span data-i18n="nav.cta">Hablemos</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <header class="top">
+    <a class="brand" href="#inicio" aria-label="José Antonio García, inicio">
+      <span class="brand-mark" aria-hidden="true">JA</span>
+      <span class="brand-name">José Antonio García</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+      </ul>
     </nav>
+    <button class="theme" type="button" id="tema" aria-label="Cambiar a modo claro">
+      <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="btn btn-small" href="#contacto">Escríbeme</a>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="gradient-sphere sphere-1"></div>
-            <div class="gradient-sphere sphere-2"></div>
-            <div class="gradient-sphere sphere-3"></div>
-            <div class="grid-bg"></div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span data-i18n="hero.badge">Disponible para proyectos</span>
-                </div>
-                <p class="hero-greeting">
-                    <span class="line"></span>
-                    <span data-i18n="hero.greeting">Hola, mi nombre es</span>
-                </p>
-                <h1 class="hero-title">
-                    <span class="title-line">
-                        <span class="word" data-text="JagcWeb">JagcWeb</span>
-                    </span>
-                </h1>
-                <div class="hero-subtitle">
-                    <span class="static-text" data-i18n="hero.subtitle">Desarrollo </span>
-                    <div class="rotating-text">
-                        <span class="rotating-word" data-i18n="hero.rotating.1">aplicaciones web</span>
-                        <span class="rotating-word" data-i18n="hero.rotating.2">smart contracts</span>
-                        <span class="rotating-word" data-i18n="hero.rotating.3">experiencias únicas</span>
-                        <span class="rotating-word" data-i18n="hero.rotating.4">soluciones escalables</span>
-                    </div>
-                </div>
-                <p class="hero-description" data-i18n="hero.description">
-                    Fullstack Developer con <strong>+6 años de experiencia</strong> especializado en 
-                    crear aplicaciones web modernas, APIs robustas y soluciones blockchain.
-                    Transformo ideas en productos digitales excepcionales.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
-                        <span class="btn-text" data-i18n="hero.cta.projects">Ver proyectos</span>
-                        <span class="btn-icon"><i class="fas fa-arrow-down"></i></span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <span class="btn-text" data-i18n="hero.cta.contact">Contactar</span>
-                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                    </a>
-                    <a href="2026-03-09-CV-JAGC-ES.pdf" class="btn btn-ghost" download>
-                        <span class="btn-text" data-i18n="hero.cta.cv">Descargar CV</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://github.com/jagcweb" target="_blank" class="social-item" data-tooltip="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jagcweb/" target="_blank" class="social-item" data-tooltip="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="visual-container">
-                    <div class="profile-card">
-                        <div class="card-glow"></div>
-                        <div class="profile-image">
-                            <img src="yo.jpg" alt="JagcWeb - Fullstack Developer" class="profile-img">
-                            <div class="image-border"></div>
-                        </div>
-                        <div class="profile-info">
-                            <h3>JagcWeb</h3>
-                            <p data-i18n="hero.profile.role">Fullstack Developer</p>
-                        </div>
-                        <div class="profile-stats">
-                            <div class="stat-item">
-                                <span class="stat-value">6+</span>
-                                <span class="stat-label" data-i18n="hero.profile.years">Años Exp.</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">25+</span>
-                                <span class="stat-label" data-i18n="hero.profile.projects">Proyectos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">10+</span>
-                                <span class="stat-label" data-i18n="hero.profile.clients">Clientes</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Tech Icons -->
-                    <div class="floating-elements">
-                        <div class="float-card card-1">
-                            <i class="fab fa-symfony"></i>
-                            <span>Symfony</span>
-                        </div>
-                        <div class="float-card card-2">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="float-card card-3">
-                            <i class="fab fa-laravel"></i>
-                            <span>Laravel</span>
-                        </div>
-                        <div class="float-card card-4">
-                            <i class="fab fa-ethereum"></i>
-                            <span>Solidity</span>
-                        </div>
-                        <div class="float-card card-5">
-                            <i class="fab fa-angular"></i>
-                            <span>Angular</span>
-                        </div>
-                    </div>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero-meta">
+        <p>Programador freelance</p>
+        <p>Madrid, en remoto</p>
+      </div>
 
-                    <!-- Code Snippet -->
-                    <div class="code-snippet">
-                        <div class="code-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="file-name">developer.js</span>
-                        </div>
-                        <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">developer</span> = {
-    <span class="property">name</span>: <span class="string">"JagcWeb"</span>,
-    <span class="property">role</span>: <span class="string">"Fullstack Dev"</span>,
-    <span class="property">passion</span>: <span class="string">"∞"</span>,
-    <span class="method">code</span>: () => <span class="string">"☕ + 💻"</span>
-};</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <h1 class="hero-title" id="hero-titulo">
+        <span class="row row-1"><span>Software a medida</span></span>
+        <span class="row row-2"><span>para tu negocio.</span></span>
+      </h1>
 
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span data-i18n="hero.scroll">Scroll</span>
-        </div>
+      <div class="hero-stack" aria-hidden="true">
+        <span class="card card-1"><span class="bar">kooclock.com</span><img src="img/kooclock.webp" width="1200" height="750" alt=""></span>
+        <span class="card card-2"><span class="bar">edutalent.es</span><img src="img/edutalent.webp" width="1200" height="750" alt=""></span>
+        <span class="card card-3"><span class="bar">koodice.com</span><img src="img/koodice.webp" width="1200" height="750" alt="" fetchpriority="high"></span>
+      </div>
 
-        <!-- Marquee -->
-        <div class="hero-marquee">
-            <div class="marquee-content">
-                <span>React</span>
-                <span class="separator">✦</span>
-                <span>Angular</span>
-                <span class="separator">✦</span>
-                <span>Python</span>
-                <span class="separator">✦</span>
-                <span>PHP</span>
-                <span class="separator">✦</span>
-                <span>Laravel</span>
-                <span class="separator">✦</span>
-                <span>Symfony</span>
-                <span class="separator">✦</span>
-                <span>Solidity</span>
-                <span class="separator">✦</span>
-                <span>MySQL</span>
-                <span class="separator">✦</span>
-                <span>MongoDB</span>
-                <span class="separator">✦</span>
-                <span>Git</span>
-                <span class="separator">✦</span>
-                <span>React</span>
-                <span class="separator">✦</span>
-                <span>Angular</span>
-                <span class="separator">✦</span>
-                <span>Python</span>
-                <span class="separator">✦</span>
-                <span>PHP</span>
-                <span class="separator">✦</span>
-                <span>Laravel</span>
-                <span class="separator">✦</span>
-                <span>Symfony</span>
-                <span class="separator">✦</span>
-                <span>Solidity</span>
-                <span class="separator">✦</span>
-                <span>MySQL</span>
-                <span class="separator">✦</span>
-                <span>MongoDB</span>
-                <span class="separator">✦</span>
-                <span>Git</span>
-                <span class="separator">✦</span>
-            </div>
+      <div class="hero-foot">
+        <div class="lead">
+          <img class="avatar" src="img/avatar.webp" width="120" height="120" alt="José Antonio García">
+          <p>Soy José Antonio García, programador. Creo programas de gestión, webs y aplicaciones para empresas, y me encargo de que sigan funcionando bien.</p>
         </div>
+        <div class="hero-actions">
+          <p class="availability">Disponible para proyectos nuevos</p>
+          <a class="btn" href="#contacto">Cuéntame tu proyecto</a>
+        </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-user"></i> <span data-i18n="about.tag">Conóceme</span></span>
-                <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
-                <p class="section-subtitle" data-i18n="about.subtitle">Más que un desarrollador, un creador de soluciones</p>
-            </div>
-
-            <div class="about-content">
-                <div class="about-visual">
-                    <div class="about-image-wrapper">
-                        <div class="about-image">
-                            <img src="yo.jpg" alt="JagcWeb - Fullstack Developer" class="about-img">
-                        </div>
-                        <div class="about-pattern"></div>
-                        <div class="about-frame"></div>
-                    </div>
-                    <div class="experience-badge">
-                        <span class="exp-number" data-i18n="about.expBadge.number">6+</span>
-                        <span class="exp-text" data-i18n="about.expBadge.text">Años de<br>Experiencia</span>
-                    </div>
-                </div>
-
-                <div class="about-info">
-                    <div class="about-text">
-                        <p class="lead" data-i18n="about.lead">
-                            Soy un <span class="highlight">desarrollador fullstack apasionado</span> por transformar 
-                            ideas complejas en soluciones digitales elegantes y funcionales.
-                        </p>
-                        <p data-i18n="about.p1">
-                            Con más de 6 años de experiencia en el desarrollo de software, he tenido la oportunidad 
-                            de trabajar en proyectos diversos que van desde startups innovadoras hasta empresas 
-                            consolidadas.Mi enfoque combina la excelencia técnica con un profundo entendimiento 
-                            de las necesidades del negocio.
-                        </p>
-                        <p data-i18n="about.p2">
-                            Me especializo en el desarrollo de aplicaciones web completas, desde el diseño de 
-                            arquitecturas backend robustas hasta interfaces de usuario intuitivas y atractivas.  
-                            También tengo experiencia en el mundo blockchain, desarrollando smart contracts 
-                            y aplicaciones descentralizadas.
-                        </p>
-                    </div>
-
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <span class="detail-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <div class="detail-content">
-                                <span class="detail-label" data-i18n="about.details.location">Ubicación</span>
-                                <span class="detail-value" data-i18n="about.details.locationValue">Madrid (España) - Remoto</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon"><i class="fas fa-envelope"></i></span>
-                            <div class="detail-content">
-                                <span class="detail-label" data-i18n="about.details.email">Email</span>
-                                <span class="detail-value">hola@jagcweb.es</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon"><i class="fas fa-briefcase"></i></span>
-                            <div class="detail-content">
-                                <span class="detail-label" data-i18n="about.details.availability">Disponibilidad</span>
-                                <span class="detail-value available" data-i18n="about.details.availabilityValue">Disponible</span>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon"><i class="fas fa-language"></i></span>
-                            <div class="detail-content">
-                                <span class="detail-label" data-i18n="about.details.languages">Idiomas</span>
-                                <span class="detail-value" data-i18n="about.details.languagesValue">Español, Inglés</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--<div class="about-interests">
-                        <h4 data-i18n="about.interests.title">Intereses</h4>
-                        <div class="interests-grid">
-                            <span class="interest-tag"><i class="fas fa-rocket"></i> <span data-i18n="about.interests.startups">Startups</span></span>
-                            <span class="interest-tag"><i class="fas fa-cube"></i> <span data-i18n="about.interests.web3">Web3</span></span>
-                            <span class="interest-tag"><i class="fas fa-robot"></i> <span data-i18n="about.interests.ai">AI/ML</span></span>
-                            <span class="interest-tag"><i class="fas fa-gamepad"></i> <span data-i18n="about.interests.gaming">Gaming</span></span>
-                            <span class="interest-tag"><i class="fas fa-music"></i> <span data-i18n="about.interests.music">Música</span></span>
-                            <span class="interest-tag"><i class="fas fa-plane"></i> <span data-i18n="about.interests.travel">Viajar</span></span>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-briefcase"></i> <span data-i18n="experience.tag">Trayectoria</span></span>
-                <h2 class="section-title" data-i18n="experience.title">Experiencia</h2>
-                <p class="section-subtitle" data-i18n="experience.subtitle">Mi camino profesional en el desarrollo de software</p>
-            </div>
-
-            <!--<div class="experience-tabs">
-                <button class="tab-btn active" data-tab="work">
-                    <i class="fas fa-building"></i>
-                    <span data-i18n="experience.tabs.work">Experiencia Laboral</span>
-                </button>
-                <button class="tab-btn" data-tab="education">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span data-i18n="experience.tabs.education">Educación</span>
-                </button>
-                <button class="tab-btn" data-tab="certifications">
-                    <i class="fas fa-certificate"></i>
-                    <span data-i18n="experience.tabs.certifications">Certificaciones</span>
-                </button>
-            </div>-->
-
-            <div class="experience-content">
-                <!-- Work Experience -->
-                <div class="tab-content active" id="work">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.work.job1.date">jul. 2022 - Presente</span>
-                                    <span class="timeline-badge current" data-i18n="experience.current">Actual</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.work.job1.title">Desarrollador web Fullstack</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-building"></i>
-                                    <span data-i18n="experience.work.job1.company">Digital Training (Viewnext / Cajamar)</span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.work.job1.description">
-                                    Trabajando con Viewnext dando soporte a Banco Cajamar. Desarrollo con Symfony y Angular. Uso de Jira, Jenkins y Bitbucket. Scripts de automatización en Python.
-                                </p>
-                                <div class="timeline-tags">
-                                    <span>Symfony</span>
-                                    <span>Angular</span>
-                                    <span>Python</span>
-                                    <span>Jira</span>
-                                    <span>Jenkins</span>
-                                    <span>Bitbucket</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.work.job2.date">feb. 2022 - jul. 2022</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.work.job2.title">Desarrollador web Fullstack</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-building"></i>
-                                    <span data-i18n="experience.work.job2.company">E-Coordina</span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.work.job2.description">
-                                    Creación de nuevos proyectos y actualización de proyectos legados. Uso de múltiples lenguajes y frameworks: JavaScript &amp; TypeScript (NestJS, React), PHP (Laravel), Python (Django). Creación de scripts en Python (automatización, Selenium, microservicios). Uso de Git, Docker, ESLint.
-                                </p>
-                                <div class="timeline-tags">
-                                    <span>NestJS</span>
-                                    <span>React</span>
-                                    <span>Laravel</span>
-                                    <span>Django</span>
-                                    <span>Python</span>
-                                    <span>Docker</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.work.job3.date">ene. 2022 - feb. 2022</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.work.job3.title">Automatización de procesos</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-building"></i>
-                                    <span data-i18n="experience.work.job3.company">NTT Data (Everis)</span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.work.job3.description">
-                                    Automatización de procesos para clientes y la propia empresa. Trabajo con Docker y diseñados con Node-RED (Node.js). Empleo de Selenium.
-                                </p>
-                                <div class="timeline-tags">
-                                    <span>Docker</span>
-                                    <span>Node-RED</span>
-                                    <span>Node.js</span>
-                                    <span>Selenium</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.work.job4.date">feb. 2021 - Presente</span>
-                                    <span class="timeline-badge current" data-i18n="experience.current">Actual</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.work.job4.title">Desarrollador web Fullstack y Gestor de Plataforma</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-building"></i>
-                                    <span data-i18n="experience.work.job4.company">Kooperador</span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.work.job4.description">
-                                    Creación de la plataforma web con HTML5, CSS3 (Bootstrap), JavaScript (jQuery + AJAX) y PHP (Laravel). Uso de librerías internas (Hash, Crypt, Mail) y externas (Invoices, Excels, Stripe). WordPress con WooCommerce, Yoast SEO, Elementor y creación de plugins propios con PHP.
-                                </p>
-                                <div class="timeline-tags">
-                                    <span>Laravel</span>
-                                    <span>jQuery</span>
-                                    <span>Bootstrap</span>
-                                    <span>WordPress</span>
-                                    <span>Stripe</span>
-                                    <span>PHP</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--
-                <div class="tab-content" id="education">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.education.edu1.date">2014 - 2019</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.education.edu1.title">Grados Medio y Superior Sistemas y Redes</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-university"></i>
-                                    <span data-i18n="experience.education.edu1.institution">IES </span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.education.edu1.description">
-                                    Especialización en desarrollo de software y sistemas distribuidos. 
-                                    Proyecto fin de grado sobre arquitecturas cloud-native.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date" data-i18n="experience.education.edu2.date">2019</span>
-                                </div>
-                                <h3 class="timeline-title" data-i18n="experience.education.edu2.title">Máster en Desarrollo Web</h3>
-                                <h4 class="timeline-company">
-                                    <i class="fas fa-university"></i>
-                                    <span data-i18n="experience.education.edu2.institution">Escuela de Tecnología Avanzada</span>
-                                </h4>
-                                <p class="timeline-description" data-i18n="experience.education.edu2.description">
-                                    Programa intensivo de especialización en tecnologías web modernas, 
-                                    metodologías ágiles y buenas prácticas de desarrollo.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-content" id="certifications">
-                    <div class="certifications-grid">
-                        <div class="cert-card">
-                            <div class="cert-icon">
-                                <i class="fab fa-aws"></i>
-                            </div>
-                            <div class="cert-info">
-                                <h4 data-i18n="experience.certs.aws.title">AWS Solutions Architect</h4>
-                                <p data-i18n="experience.certs.aws.issuer">Amazon Web Services</p>
-                                <span class="cert-date">2023</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-icon">
-                                <i class="fab fa-google"></i>
-                            </div>
-                            <div class="cert-info">
-                                <h4 data-i18n="experience.certs.google.title">Google Cloud Professional</h4>
-                                <p data-i18n="experience.certs.google.issuer">Google Cloud Platform</p>
-                                <span class="cert-date">2022</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-icon">
-                                <i class="fab fa-ethereum"></i>
-                            </div>
-                            <div class="cert-info">
-                                <h4 data-i18n="experience.certs.blockchain.title">Blockchain Developer</h4>
-                                <p data-i18n="experience.certs.blockchain.issuer">Ethereum Foundation</p>
-                                <span class="cert-date">2022</span>
-                            </div>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="cert-info">
-                                <h4 data-i18n="experience.certs.security.title">Cybersecurity Fundamentals</h4>
-                                <p data-i18n="experience.certs.security.issuer">CompTIA</p>
-                                <span class="cert-date">2021</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-code"></i> <span data-i18n="skills.tag">Habilidades</span></span>
-                <h2 class="section-title" data-i18n="skills.title">Skills & Tecnologías</h2>
-                <p class="section-subtitle" data-i18n="skills.subtitle">Las herramientas que domino para crear soluciones excepcionales</p>
-            </div>
-
-            <div class="skills-content">
-                <!-- Skills Categories -->
-                <div class="skills-categories">
-                    <div class="skill-category" data-category="backend">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <div class="category-info">
-                                <h3 data-i18n="skills.categories.backend.title">Backend Development</h3>
-                                <p data-i18n="skills.categories.backend.subtitle">Arquitecturas robustas y escalables</p>
-                            </div>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #3776AB">
-                                        <i class="fab fa-python"></i>
-                                    </div>
-                                    <span class="skill-name">Python</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #777BB4">
-                                        <i class="fab fa-php"></i>
-                                    </div>
-                                    <span class="skill-name">PHP</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #339933">
-                                        <i class="fab fa-node-js"></i>
-                                    </div>
-                                    <span class="skill-name">Node.js</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #FF2D20">
-                                        <i class="fab fa-laravel"></i>
-                                    </div>
-                                    <span class="skill-name">Laravel</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #ffffff">
-                                        <i class="fab fa-symfony"></i>
-                                    </div>
-                                    <span class="skill-name">Symfony</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #092E20">
-                                        <i class="fab fa-python"></i>
-                                    </div>
-                                    <span class="skill-name">Django</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #E0234E">
-                                        <i class="fas fa-cat"></i>
-                                    </div>
-                                    <span class="skill-name">NestJS</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #21759B">
-                                        <i class="fab fa-wordpress"></i>
-                                    </div>
-                                    <span class="skill-name">WordPress</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category" data-category="frontend">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <div class="category-info">
-                                <h3 data-i18n="skills.categories.frontend.title">Frontend Development</h3>
-                                <p data-i18n="skills.categories.frontend.subtitle">Interfaces modernas e interactivas</p>
-                            </div>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #61DAFB">
-                                        <i class="fab fa-react"></i>
-                                    </div>
-                                    <span class="skill-name">React</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #DD0031">
-                                        <i class="fab fa-angular"></i>
-                                    </div>
-                                    <span class="skill-name">Angular</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #000000">
-                                        <i class="fab fa-react"></i>
-                                    </div>
-                                    <span class="skill-name">Next.js</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #F7DF1E">
-                                        <i class="fab fa-js"></i>
-                                    </div>
-                                    <span class="skill-name">JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #3178C6">
-                                        <i class="fab fa-js"></i>
-                                    </div>
-                                    <span class="skill-name">TypeScript</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #0769AD">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <span class="skill-name">jQuery</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category" data-category="blockchain">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-cubes"></i>
-                            </div>
-                            <div class="category-info">
-                                <h3 data-i18n="skills.categories.blockchain.title">Blockchain & Web3</h3>
-                                <p data-i18n="skills.categories.blockchain.subtitle">Desarrollo descentralizado</p>
-                            </div>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #627EEA">
-                                        <i class="fab fa-ethereum"></i>
-                                    </div>
-                                    <span class="skill-name">Solidity</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #E4A663">
-                                        <i class="fas fa-cube"></i>
-                                    </div>
-                                    <span class="skill-name">Ganache</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #5E464D">
-                                        <i class="fas fa-tools"></i>
-                                    </div>
-                                    <span class="skill-name">Truffle</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #2535A0">
-                                        <i class="fas fa-network-wired"></i>
-                                    </div>
-                                    <span class="skill-name">Web3.js</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category" data-category="database">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="category-info">
-                                <h3 data-i18n="skills.categories.database.title">Bases de Datos</h3>
-                                <p data-i18n="skills.categories.database.subtitle">SQL y NoSQL</p>
-                            </div>
-                        </div>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #4479A1">
-                                        <i class="fas fa-database"></i>
-                                    </div>
-                                    <span class="skill-name">MySQL</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-icon" style="--skill-color: #47A248">
-                                        <i class="fas fa-leaf"></i>
-                                    </div>
-                                    <span class="skill-name">MongoDB</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools & Technologies -->
-                <div class="tools-section">
-                    <h3 class="tools-title" data-i18n="skills.tools">Herramientas & DevOps</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item" data-tooltip="Git">
-                            <i class="fab fa-git-alt"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="Docker">
-                            <i class="fab fa-docker"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="AWS">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="Linux">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="Figma">
-                            <i class="fab fa-figma"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="VS Code">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="Jira">
-                            <i class="fab fa-jira"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="RabbitMQ">
-                            <i class="fas fa-envelope-open-text"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="WooCommerce">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="reCAPTCHA">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="Ansible">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="tool-item" data-tooltip="IA">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-folder-open"></i> <span data-i18n="projects.tag">Portfolio</span></span>
-                <h2 class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
-                <p class="section-subtitle" data-i18n="projects.subtitle">Una selección de mis trabajos más recientes</p>
-            </div>
-
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">
-                    <span data-i18n="projects.filters.all">Todos</span>
-                    <span class="filter-count">12</span>
-                </button>
-                <button class="filter-btn" data-filter="fullstack">
-                    <span data-i18n="projects.filters.fullstack">Fullstack</span>
-                    <span class="filter-count">4</span>
-                </button>
-                <button class="filter-btn" data-filter="frontend">
-                    <span data-i18n="projects.filters.frontend">Frontend</span>
-                    <span class="filter-count">1</span>
-                </button>
-                <button class="filter-btn" data-filter="backend">
-                    <span data-i18n="projects.filters.backend">Backend</span>
-                    <span class="filter-count">2</span>
-                </button>
-                <button class="filter-btn" data-filter="blockchain">
-                    <span data-i18n="projects.filters.blockchain">Blockchain</span>
-                    <span class="filter-count">5</span>
-                </button>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1: New-Soinuka -->
-                <article class="project-card featured" data-category="fullstack">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fab fa-laravel"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/New-Soinuka" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.soinuka.eus" target="_blank" class="action-btn" data-tooltip="Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <span class="project-badge">Destacado</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.soinuka.category">Fullstack</span>
-                        </div>
-                        <h3 class="project-title">New-Soinuka</h3>
-                        <p class="project-description" data-i18n="projects.items.soinuka.description">
-                            Plataforma web completa desarrollada con Laravel. PHP 66.2%, Blade 33.3%, Shell 0.5%.
-                        </p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>PHP</span>
-                            <span>Blade</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Marketplace ETH -->
-                <article class="project-card" data-category="blockchain">
-                    <div class="project-image">
-                        <div class="project-placeholder blockchain">
-                            <i class="fab fa-ethereum"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/marketplace-eth" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.marketplaceEth.category">Blockchain</span>
-                        </div>
-                        <h3 class="project-title">Marketplace ETH</h3>
-                        <p class="project-description" data-i18n="projects.items.marketplaceEth.description">
-                            Marketplace descentralizado construido con Next.js y Web3.js. JavaScript 99.7%, CSS 0.3%.
-                        </p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>Web3.js</span>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: Auto-Message Discord -->
-                <article class="project-card" data-category="backend">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/auto-message-discord" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.autoMessage.category">Bot / Automatización</span>
-                        </div>
-                        <h3 class="project-title">Auto-Message Discord</h3>
-                        <p class="project-description" data-i18n="projects.items.autoMessage.description">
-                            Bot de automatización de mensajes para Discord desarrollado en Python.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: Faucet -->
-                <article class="project-card" data-category="blockchain">
-                    <div class="project-image">
-                        <div class="project-placeholder blockchain">
-                            <i class="fas fa-faucet"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/faucet" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.faucet.category">Blockchain</span>
-                        </div>
-                        <h3 class="project-title">Faucet</h3>
-                        <p class="project-description" data-i18n="projects.items.faucet.description">
-                            Faucet creado con React, Solidity, Ganache, Truffle y BulmaCSS.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Solidity</span>
-                            <span>Ganache</span>
-                            <span>Truffle</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: NASA Oracle -->
-                <article class="project-card" data-category="blockchain">
-                    <div class="project-image">
-                        <div class="project-placeholder blockchain">
-                            <i class="fas fa-satellite"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/NASAOracle" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.nasaOracle.category">Blockchain / Oracle</span>
-                        </div>
-                        <h3 class="project-title">NASA Oracle</h3>
-                        <p class="project-description" data-i18n="projects.items.nasaOracle.description">
-                            Oracle con Smart Contracts que consume datos de la API de la NASA. React y Solidity.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Solidity</span>
-                            <span>NASA API</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 6: Hotspania -->
-                <article class="project-card" data-category="fullstack">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fab fa-laravel"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/hotspania" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://hotspania.es/" target="_blank" class="action-btn" data-tooltip="Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.hotspania.category">Fullstack</span>
-                        </div>
-                        <h3 class="project-title">Hotspania</h3>
-                        <p class="project-description" data-i18n="projects.items.hotspania.description">
-                            Plataforma web desarrollada con Laravel.
-                        </p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>PHP</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 7: Niolshots Backend -->
-                <article class="project-card" data-category="backend">
-                    <div class="project-image">
-                        <div class="project-placeholder api">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/niolshots-backend" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.niolshotsBack.category">Backend</span>
-                        </div>
-                        <h3 class="project-title">Niolshots Backend</h3>
-                        <p class="project-description" data-i18n="projects.items.niolshotsBack.description">
-                            API backend para Niolshots desarrollada con Node.js.
-                        </p>
-                        <div class="project-tech">
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 8: Niolshots Frontend -->
-                <article class="project-card" data-category="frontend">
-                    <div class="project-image">
-                        <div class="project-placeholder dashboard">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/niolshots-frontend" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.niolshotsFront.category">Frontend</span>
-                        </div>
-                        <h3 class="project-title">Niolshots Frontend</h3>
-                        <p class="project-description" data-i18n="projects.items.niolshotsFront.description">
-                            Interfaz de usuario para Niolshots desarrollada con React.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 9: Rescue Airdrop Linea -->
-                <article class="project-card" data-category="blockchain">
-                    <div class="project-image">
-                        <div class="project-placeholder blockchain">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/RESCUE_AIRDROP_LINEA_TOKENS_FROM_COMPROMISED_WALLET" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.rescueAirdrop.category">Blockchain / Security</span>
-                        </div>
-                        <h3 class="project-title">Rescue Airdrop Linea</h3>
-                        <p class="project-description" data-i18n="projects.items.rescueAirdrop.description">
-                            Script para rescatar tokens de airdrop de Linea desde una wallet comprometida.
-                        </p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 10: Rescue Hype -->
-                <article class="project-card" data-category="blockchain">
-                    <div class="project-image">
-                        <div class="project-placeholder blockchain">
-                            <i class="fas fa-life-ring"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/rescue-hype" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.rescueHype.category">Blockchain</span>
-                        </div>
-                        <h3 class="project-title">Rescue Hype</h3>
-                        <p class="project-description" data-i18n="projects.items.rescueHype.description">
-                            Herramienta de rescate de tokens desarrollada con JavaScript y Ethers.js.
-                        </p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>Ethers.js</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 11: Diavla Hookah -->
-                <article class="project-card" data-category="fullstack">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fab fa-laravel"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-actions">
-                                <a href="https://github.com/jagcweb/diavlahookah" target="_blank" class="action-btn" data-tooltip="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://diavlahookah.es/" target="_blank" class="action-btn" data-tooltip="Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <span class="project-category" data-i18n="projects.items.diavla.category">Fullstack</span>
-                        </div>
-                        <h3 class="project-title">Diavla Hookah</h3>
-                        <p class="project-description" data-i18n="projects.items.diavla.description">
-                            Plataforma web para Diavla Hookah desarrollada con Laravel.
-                        </p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>PHP</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="projects-cta">
-                <a href="https://github.com/jagcweb" target="_blank" class="btn btn-outline">
-                    <span data-i18n="projects.viewMore">Ver más en GitHub</span>
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-quote-left"></i> <span data-i18n="testimonials.tag">Testimonios</span></span>
-                <h2 class="section-title" data-i18n="testimonials.title">Lo que dicen de mí</h2>
-                <p class="section-subtitle" data-i18n="testimonials.subtitle">Opiniones de clientes y colaboradores</p>
-            </div>
-
-            <div class="testimonials-slider">
-                <div class="testimonials-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p data-i18n="testimonials.items.1.text">
-                                "Trabajar con JagcWeb fue una experiencia excepcional.Su capacidad técnica 
-                                y profesionalismo superaron nuestras expectativas. Entregó un producto de 
-                                alta calidad en tiempo récord."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4 data-i18n="testimonials.items.1.name">María García</h4>
-                                <p data-i18n="testimonials.items.1.role">CEO, TechStartup S.L.</p>
-                            </div>
-                            <div class="author-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p data-i18n="testimonials.items.2.text">
-                                "La solución blockchain que desarrolló para nosotros revolucionó nuestro 
-                                modelo de negocio. Su conocimiento en Solidity y Web3 es impresionante. 
-                                Sin duda volveremos a trabajar juntos."
-                            </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4 data-i18n="testimonials.items.2.name">Carlos Rodríguez</h4>
-                                <p data-i18n="testimonials.items.2.role">CTO, CryptoVentures</p>
-                            </div>
-                            <div class="author-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p data-i18n="testimonials.items.3.text">
-                                "Un desarrollador excepcional. Su API nos permitió escalar de 1000 a 
-                                100.000 usuarios sin problemas.La documentación y el código son 
-                                impecables. 100% recomendado."
-                            </p>
-                                                </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4 data-i18n="testimonials.items.3.name">Laura Martínez</h4>
-                                <p data-i18n="testimonials.items.3.role">Product Manager, ScaleUp Inc.</p>
-                            </div>
-                            <div class="author-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slider-controls">
-                    <button class="slider-btn prev" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="slider-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <button class="slider-btn next" aria-label="Siguiente">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Clients Logos -->
-            <div class="clients-section">
-                <p class="clients-title" data-i18n="testimonials.clients">Empresas con las que he colaborado y trabajado</p>
-                <div class="clients-grid">
-                    <a href="https://encuentramusico.es/" target="_blank" class="client-logo"><span>EncuentraPianista</span></a>
-                    <a href="https://kooperador.es/" target="_blank" class="client-logo"><span>Kooperador</span></a>
-                    <a href="https://hotspania.es/" target="_blank" class="client-logo"><span>Hotspania</span></a>
-                    <a href="https://www.cajamar.es/" target="_blank" class="client-logo"><span>Cajamar</span></a>
-                    <a href="https://www.e-coordina.es/" target="_blank" class="client-logo"><span>E-Coordina</span></a>
-                    <a href="https://es.nttdata.com/" target="_blank" class="client-logo"><span>NTT Data</span></a>
-                    <a href="https://www.viewnext.com/" target="_blank" class="client-logo"><span>Viewnext</span></a>
-                    <a href="https://diavlahookah.es/" target="_blank" class="client-logo"><span>Diavla Hookah</span></a>
-                    <a href="https://diavlab2b.es/" target="_blank" class="client-logo"><span>DiavlaB2B</span></a>
-                    <a href="https://www.soinuka.eus" target="_blank" class="client-logo"><span>Soinuka</span></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-envelope"></i> <span data-i18n="contact.tag">Contacto</span></span>
-                <h2 class="section-title" data-i18n="contact.title">¿Hablamos?</h2>
-                <p class="section-subtitle" data-i18n="contact.subtitle">Estoy disponible para nuevos proyectos y oportunidades</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-text">
-                        <h3 data-i18n="contact.heading">Construyamos algo <span class="gradient-text">increíble</span> juntos</h3>
-                        <p data-i18n="contact.description">
-                            Ya sea que tengas un proyecto en mente, una pregunta o simplemente 
-                            quieras saludar, estaré encantado de escucharte. Mi bandeja de entrada 
-                            está siempre abierta.
-                        </p>
-                    </div>
-
-                    <div class="contact-methods">
-                        <a href="mailto:hola@jagcweb.es" class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-info">
-                                <span class="method-label" data-i18n="contact.methods.email">Email</span>
-                                <span class="method-value">hola@jagcweb.es</span>
-                            </div>
-                            <i class="fas fa-arrow-right method-arrow"></i>
-                        </a>
-
-                        <a href="tel:+34666225457" class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="method-info">
-                                <span class="method-label" data-i18n="contact.methods.phone">Teléfono</span>
-                                <span class="method-value">+34 666 225 457</span>
-                            </div>
-                            <i class="fas fa-arrow-right method-arrow"></i>
-                        </a>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="method-info">
-                                <span class="method-label" data-i18n="contact.methods.location">Ubicación</span>
-                                <span class="method-value" data-i18n="contact.methods.locationValue">Madrid (España) - Remoto</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-social">
-                        <p data-i18n="contact.social">También puedes encontrarme en:</p>
-                        <div class="social-grid">
-                            <a href="https://github.com/jagcweb" target="_blank" class="social-card">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jagcweb/" target="_blank" class="social-card">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-header">
-                            <h4 data-i18n="contact.form.title">Envíame un mensaje</h4>
-                            <p data-i18n="contact.form.subtitle">Respondo en menos de 24 horas</p>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">
-                                    <i class="fas fa-user"></i>
-                                    <span data-i18n="contact.form.name">Nombre</span>
-                                </label>
-                                <div class="input-line"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">
-                                    <i class="fas fa-envelope"></i>
-                                    <span data-i18n="contact.form.email">Email</span>
-                                </label>
-                                <div class="input-line"></div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required>
-                            <label for="subject">
-                                <i class="fas fa-tag"></i>
-                                <span data-i18n="contact.form.subject">Asunto</span>
-                            </label>
-                            <div class="input-line"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <select id="budget" name="budget" required>
-                                <option value="" disabled selected></option>
-                                <option value="small" data-i18n="contact.form.budgetOptions.small">Menos de 1.000€</option>
-                                <option value="medium" data-i18n="contact.form.budgetOptions.medium">1.000€ - 5.000€</option>
-                                <option value="large" data-i18n="contact.form.budgetOptions.large">5.000€ - 10.000€</option>
-                                <option value="enterprise" data-i18n="contact.form.budgetOptions.enterprise">Más de 10.000€</option>
-                            </select>
-                            <label for="budget">
-                                <i class="fas fa-euro-sign"></i>
-                                <span data-i18n="contact.form.budget">Presupuesto estimado</span>
-                            </label>
-                            <div class="input-line"></div>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message">
-                                <i class="fas fa-comment-alt"></i>
-                                <span data-i18n="contact.form.message">Mensaje</span>
-                            </label>
-                            <div class="input-line"></div>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="privacy" name="privacy" required>
-                            <label for="privacy" data-i18n="contact.form.privacy">
-                                Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos.
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <span class="btn-text" data-i18n="contact.form.submit">Enviar mensaje</span>
-                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                            <div class="btn-loader">
-                                <i class="fas fa-spinner fa-spin"></i>
-                            </div>
-                            <div class="btn-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2 data-i18n="cta.title">¿Listo para empezar tu proyecto?</h2>
-                    <p data-i18n="cta.subtitle">Transformemos juntos tu idea en realidad. Contáctame y hablemos de cómo puedo ayudarte.</p>
-                </div>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span data-i18n="cta.start">Empezar proyecto</span>
-                        <i class="fas fa-rocket"></i>
-                    </a>
-                    <a href="https://calendly.com/jagcweb" target="_blank" class="btn btn-outline">
-                        <span data-i18n="cta.schedule">Agendar llamada</span>
-                        <i class="fas fa-calendar-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="cta-decoration">
-                <div class="decoration-circle"></div>
-                <div class="decoration-circle"></div>
-                <div class="decoration-circle"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <span class="logo-bracket">&lt;</span>
-                        <span class="logo-text">Jagc<span class="logo-highlight">Web</span></span>
-                        <span class="logo-bracket">/&gt;</span>
-                    </a>
-                    <p class="footer-tagline" data-i18n="footer.tagline">
-                        Desarrollador Fullstack apasionado por crear experiencias digitales excepcionales.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://github.com/jagcweb" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jagcweb/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4 data-i18n="footer.navigation">Navegación</h4>
-                        <ul>
-                            <li><a href="#home" data-i18n="nav.home">Inicio</a></li>
-                            <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
-                            <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
-                            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-                            <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
-                            <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 data-i18n="footer.services.title">Servicios</h4>
-                        <ul>
-                            <li><a href="#" data-i18n="footer.services.web">Desarrollo Web</a></li>
-                            <li><a href="#" data-i18n="footer.services.mobile">Aplicaciones móviles</a></li>
-                            <li><a href="#" data-i18n="footer.services.api">APIs & Backend</a></li>
-                            <li><a href="#" data-i18n="footer.services.contracts">Smart Contracts</a></li>
-                            <li><a href="#" data-i18n="footer.services.consulting">Consultoría técnica</a></li>
-                            <li><a href="#" data-i18n="footer.services.mentoring">Mentoring</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 data-i18n="footer.resources.title">Recursos</h4>
-                        <ul>
-                            <li><a href="#" data-i18n="footer.resources.blog">Blog</a></li>
-                            <li><a href="#" data-i18n="footer.resources.tutorials">Tutoriales</a></li>
-                            <li><a href="#" data-i18n="footer.resources.newsletter">Newsletter</a></li>
-                            <li><a href="#" data-i18n="footer.resources.snippets">Snippets</a></li>
-                            <li><a href="#" data-i18n="footer.resources.opensource">Open Source</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h4 data-i18n="footer.newsletter.title">Newsletter</h4>
-                    <p data-i18n="footer.newsletter.description">Suscríbete para recibir tips de desarrollo y novedades.</p>
-                    <form class="newsletter-form">
-                        <div class="newsletter-input">
-                            <input type="email" data-i18n-placeholder="footer.newsletter.placeholder" placeholder="tu@email.com" required>
-                            <button type="submit">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </form>
-                    <p class="newsletter-note" data-i18n="footer.newsletter.note">Sin spam. Cancela cuando quieras.</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p data-i18n="footer.copyright">&copy; 2026 JagcWeb. Todos los derechos reservados.</p>
-                </div>
-                <div class="footer-legal">
-                    <a href="#" data-i18n="footer.legal.privacy">Política de Privacidad</a>
-                    <a href="#" data-i18n="footer.legal.terms">Términos de Uso</a>
-                    <a href="#" data-i18n="footer.legal.cookies">Cookies</a>
-                </div>
-                <div class="footer-credits">
-                    <p data-i18n="footer.credits">Diseñado y desarrollado con <i class="fas fa-heart"></i> y mucho <i class="fas fa-coffee"></i></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to top -->
-        <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </footer>
-
-    <!-- Modal para proyecto -->
-    <div class="modal" id="projectModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Cerrar modal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <div class="project-placeholder">
-                        <i class="fas fa-image"></i>
-                    </div>
-                </div>
-                <div class="modal-info">
-                    <span class="modal-category">Categoría</span>
-                    <h3 class="modal-title">Título del Proyecto</h3>
-                    <p class="modal-description">Descripción detallada del proyecto...</p>
-                    <div class="modal-details">
-                        <div class="detail">
-                            <span class="detail-label" data-i18n="modal.client">Cliente</span>
-                            <span class="detail-value">Nombre del cliente</span>
-                        </div>
-                        <div class="detail">
-                            <span class="detail-label" data-i18n="modal.date">Fecha</span>
-                            <span class="detail-value">2024</span>
-                        </div>
-                        <div class="detail">
-                            <span class="detail-label" data-i18n="modal.role">Rol</span>
-                            <span class="detail-value" data-i18n="modal.roleValue">Fullstack Developer</span>
-                        </div>
-                    </div>
-                    <div class="modal-tech">
-                        <h4 data-i18n="modal.technologies">Tecnologías</h4>
-                        <div class="tech-list">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
-                    <div class="modal-actions">
-                        <a href="#" class="btn btn-primary">
-                            <span data-i18n="modal.viewDemo">Ver demo</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <span data-i18n="modal.viewCode">Ver código</span>
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="ticker" aria-label="Productos en producción">
+      <div class="ticker-track">
+        <ul>
+          <li>koodice.com</li><li>kooclock.com</li><li>koomparador.com</li><li>koolaborador.com</li><li>kooperador.es</li><li>edutalent.es</li><li>encuentramusico.es</li><li>diavlab2b.es</li><li>Banco Cajamar</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>koodice.com</li><li>kooclock.com</li><li>koomparador.com</li><li>koolaborador.com</li><li>kooperador.es</li><li>edutalent.es</li><li>encuentramusico.es</li><li>diavlab2b.es</li><li>Banco Cajamar</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Toast notifications -->
-    <div class="toast-container" id="toastContainer"></div>
+    <section class="work" id="trabajos" aria-labelledby="trabajos-titulo">
+      <div class="head">
+        <h2 id="trabajos-titulo">Trabajos</h2>
+        <p>Programas y webs que ya están funcionando y que usan cada día empresas, comerciales y candidatos.</p>
+      </div>
 
-    <!-- Scripts - IMPORTANTE: i18n.js debe cargarse ANTES de script2.js -->
-    <script src="i18n.js"></script>
-    <script src="script2.js"></script>
+      <div class="group">
+        <div class="group-head">
+          <h3>Grupo Kooperador</h3>
+          <p>Cinco programas para una misma empresa, conectados entre sí. Los desarrollo desde 2021.</p>
+        </div>
+        <div class="grid grid-koo">
+          <a class="shot shot-xl" href="https://koodice.com/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">koodice.com</span><img src="img/koodice.webp" width="1200" height="750" alt="Portada de Koodice" loading="lazy"></span>
+            <span class="caption"><strong>Koodice</strong><span>Programa para gestionar clientes, presupuestos, agenda y facturas (con Verifactu), con asistentes de IA.</span></span>
+          </a>
+          <a class="shot" href="https://kooclock.com/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">kooclock.com</span><img src="img/kooclock.webp" width="1200" height="750" alt="Portada de Kooclock" loading="lazy"></span>
+            <span class="caption"><strong>Kooclock</strong><span>Control horario: los trabajadores fichan desde el móvil, el ordenador o WhatsApp.</span></span>
+          </a>
+          <a class="shot" href="https://koomparador.com/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">koomparador.com</span><img src="img/koomparador.webp" width="1200" height="750" alt="Portada de Koomparador" loading="lazy"></span>
+            <span class="caption"><strong>Koomparador</strong><span>Subes tu factura de luz o gas y te dice qué tarifa te sale más barata.</span></span>
+          </a>
+          <a class="shot" href="https://koolaborador.com/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">koolaborador.com</span><img src="img/koolaborador.webp" width="1200" height="750" alt="Portada de Koolaborador" loading="lazy"></span>
+            <span class="caption"><strong>Koolaborador</strong><span>Herramienta para los comerciales que venden luz, fibra, alarmas y seguros.</span></span>
+          </a>
+          <a class="shot" href="https://kooperador.es/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">kooperador.es</span><img src="img/kooperador.webp" width="1200" height="750" alt="Portada de Kooperador" loading="lazy"></span>
+            <span class="caption"><strong>Kooperador</strong><span>Web de la empresa y panel interno desde el que se gestiona todo.</span></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-head">
+          <h3>Otros clientes</h3>
+        </div>
+        <div class="grid grid-3">
+          <a class="shot" href="https://edutalent.es/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">edutalent.es</span><img src="img/edutalent.webp" width="1200" height="750" alt="Portada de Edutalent" loading="lazy"></span>
+            <span class="caption"><strong>Edutalent</strong><span>Programa de recursos humanos y bolsa de empleo para colegios y docentes.</span></span>
+          </a>
+          <a class="shot" href="https://encuentramusico.es/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">encuentramusico.es</span><img src="img/encuentramusico.webp" width="1200" height="750" alt="Portada de EncuentraMúsico" loading="lazy"></span>
+            <span class="caption"><strong>EncuentraMúsico</strong><span>Web para encontrar músicos y ofertas de empleo para músicos.</span></span>
+          </a>
+          <a class="shot" href="https://diavlab2b.es/" target="_blank" rel="noopener">
+            <span class="frame"><span class="bar">diavlab2b.es</span><img src="img/diavlab2b.webp" width="1200" height="750" alt="Portada de Diavla B2B" loading="lazy"></span>
+            <span class="caption"><strong>Diavla B2B</strong><span>Tienda online para que los distribuidores hagan sus pedidos.</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="head">
+        <h2 id="servicios-titulo">En qué te ayudo</h2>
+        <p>Con presupuesto cerrado o por horas. Tú me cuentas el problema y yo lo resuelvo.</p>
+      </div>
+      <div class="bento">
+        <article class="tile tile-main">
+          <h3>Programas de gestión a medida</h3>
+          <p>Para controlar clientes, pedidos, presupuestos o personal tal y como trabaja tu empresa, sin adaptarte a un programa genérico.</p>
+          <ul class="chips"><li>Laravel</li><li>Symfony</li><li>Spring Boot</li><li>MySQL</li><li>Oracle</li></ul>
+        </article>
+        <article class="tile">
+          <h3>Webs y aplicaciones</h3>
+          <p>Áreas de clientes, formularios, buscadores y paneles fáciles de usar, que funcionan bien también en el móvil.</p>
+          <ul class="chips"><li>Angular</li><li>React</li><li>Next.js</li><li>TypeScript</li></ul>
+        </article>
+        <article class="tile">
+          <h3>Automatizar tareas</h3>
+          <p>Informes, importar Excel, avisos y conexiones entre programas para lo que hoy se hace a mano.</p>
+          <ul class="chips"><li>Python</li><li>Node.js</li><li>Kafka</li><li>RabbitMQ</li></ul>
+        </article>
+        <article class="tile tile-accent">
+          <h3>Lo que mejor conozco</h3>
+          <p>Sectores en los que ya he trabajado y que conozco por dentro.</p>
+          <ul class="chips chips-big"><li>Gestión de clientes y comerciales</li><li>Control horario</li><li>Energía y telecomunicaciones</li><li>Facturación y Verifactu</li><li>RRHH y empleo</li><li>Banca online</li><li>Inteligencia artificial y WhatsApp</li></ul>
+        </article>
+        <article class="tile">
+          <h3>Webs y tiendas online</h3>
+          <p>Con WordPress y WooCommerce, y funciones a medida cuando lo normal no basta.</p>
+        </article>
+        <article class="tile">
+          <h3>Un programador más en tu equipo</h3>
+          <p>Si ya tienes equipo técnico, me sumo por horas o a media jornada para sacar el trabajo adelante.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="proceso-titulo">
+      <div class="head">
+        <h2 id="proceso-titulo">Cómo trabajamos</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Hablamos</h3><p>Me cuentas qué necesitas en una llamada corta, sin compromiso.</p></li>
+        <li><h3>Presupuesto claro</h3><p>Te paso por escrito qué haré, cuándo estará y cuánto cuesta.</p></li>
+        <li><h3>Lo ves avanzar</h3><p>Cada semana puedes probar cómo va, antes de que esté terminado.</p></li>
+        <li><h3>Puesta en marcha</h3><p>Lo dejo funcionando y sigo disponible para cambios o dudas.</p></li>
+      </ol>
+    </section>
+
+    <section class="experience" id="experiencia" aria-labelledby="experiencia-titulo">
+      <div class="head head-sticky">
+        <h2 id="experiencia-titulo">Experiencia</h2>
+        <p>Más de cinco años programando para empresas, consultoras y banca.</p>
+        <a class="link" href="cv-jose-antonio-garcia.pdf" download>Descargar CV en PDF</a>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="when">2026 – hoy</span>
+          <h3>Desarrollador en Edutalent</h3>
+          <p>Software de RRHH y bolsa de empleo para centros educativos.</p>
+        </li>
+        <li>
+          <span class="when">2022 – 2026</span>
+          <h3>Fullstack para Banco Cajamar</h3>
+          <p class="where">Digital Training, en el equipo de Viewnext</p>
+          <p>Web pública, banca electrónica y gestor de contenidos propio. API REST con microservicios y TDD sobre Symfony, Spring Boot, Angular y Oracle; despliegues con Jenkins y Ansible.</p>
+        </li>
+        <li>
+          <span class="when">2022</span>
+          <h3>Fullstack en E-Coordina</h3>
+          <p>NestJS, React y TypeScript, Laravel y Django. Scripts de automatización en Python.</p>
+        </li>
+        <li>
+          <span class="when">2022</span>
+          <h3>Automatización en NTT Data</h3>
+          <p>Flujos automatizados para clientes con Node-RED, Docker y Selenium.</p>
+        </li>
+        <li>
+          <span class="when">2021 – hoy</span>
+          <h3>Desarrollo del Grupo Kooperador</h3>
+          <p>Plataforma en Laravel, integraciones con Stripe y facturación, y los productos Koodice, Kooclock, Koomparador y Koolaborador.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="side" aria-labelledby="propios-titulo">
+      <h2 id="propios-titulo">Proyectos propios en GitHub</h2>
+      <ul class="side-list">
+        <li><a href="https://github.com/jagcweb/marketplace-eth" target="_blank" rel="noopener"><strong>Marketplace ETH</strong><span>Next.js y Web3.js</span></a></li>
+        <li><a href="https://github.com/jagcweb/NASAOracle" target="_blank" rel="noopener"><strong>NASA Oracle</strong><span>Solidity y API de la NASA</span></a></li>
+        <li><a href="https://github.com/jagcweb/faucet" target="_blank" rel="noopener"><strong>Faucet</strong><span>React, Solidity y Truffle</span></a></li>
+        <li><a href="https://github.com/jagcweb/rescue-hype" target="_blank" rel="noopener"><strong>Rescue Hype</strong><span>Ethers.js</span></a></li>
+        <li><a href="https://github.com/jagcweb/auto-message-discord" target="_blank" rel="noopener"><strong>Auto-Message Discord</strong><span>Python</span></a></li>
+        <li><a href="https://github.com/jagcweb" target="_blank" rel="noopener"><strong>Ver todo</strong><span>github.com/jagcweb</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <section class="contact" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="contact-inner">
+      <h2 id="contacto-titulo" class="contact-title">¿Hablamos?</h2>
+      <a class="mail" href="mailto:hola@jagcweb.es">hola@jagcweb.es</a>
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p>Con dos o tres frases me basta para empezar. Te contesto por correo con los siguientes pasos.</p>
+          <ul class="direct">
+            <li><a href="tel:+34666225457">666 225 457</a></li>
+            <li><a href="https://www.linkedin.com/in/jagcweb/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/jagcweb" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <form class="form" id="form-contacto" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" name="nombre" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-empresa">Empresa <span class="opt">(opcional)</span></label>
+              <input id="f-empresa" name="empresa" autocomplete="organization">
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>Cómo prefieres trabajar</legend>
+            <div class="choices">
+              <label><input type="radio" name="modo" value="Proyecto cerrado" checked> Proyecto cerrado</label>
+              <label><input type="radio" name="modo" value="Por horas"> Por horas</label>
+              <label><input type="radio" name="modo" value="Aún no lo sé"> Aún no lo sé</label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-mensaje">Qué necesitas</label>
+            <textarea id="f-mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <div class="form-send">
+            <button class="btn" type="submit">Preparar correo</button>
+            <p class="form-note">Se abrirá tu correo con el mensaje listo para enviar.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>© 2026 José Antonio García Carmona</p>
+    <a class="link" href="cv-jose-antonio-garcia.pdf" download>CV en PDF</a>
+  </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
