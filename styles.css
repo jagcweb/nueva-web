@@ -115,10 +115,10 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 /* ---------- portada ---------- */
 .hero {
   position: relative; isolation: isolate;
-  min-height: 100svh;
+  min-height: min(100svh, 54rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   padding: 6.5rem var(--gutter) clamp(2rem, 4vw, 3rem);
   overflow: hidden;
 }
@@ -129,11 +129,6 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, var(--glow) 0%, transparent 62%);
   filter: blur(10px);
-}
-.hero-meta {
-  display: flex; justify-content: space-between; gap: 1rem;
-  font-size: .9375rem; font-weight: 500; color: var(--muted);
-  border-top: 1px solid var(--line); padding-top: 1rem;
 }
 .hero-title {
   align-self: center;
@@ -171,14 +166,14 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   display: flex; justify-content: space-between; align-items: end; gap: 2rem;
 }
 .lead {
-  display: flex; gap: 1rem; align-items: flex-start;
-  max-width: 30rem; font-size: 1.0625rem; color: var(--muted);
+  display: flex; gap: 1.1rem; align-items: center;
+  max-width: 31rem; font-size: 1.0625rem; color: var(--muted);
   padding: 1.1rem 1.25rem; border-radius: var(--r-md);
   background: color-mix(in srgb, var(--bg) 70%, transparent); backdrop-filter: blur(10px);
   border: 1px solid var(--line);
 }
 .lead p::first-line { color: var(--text); }
-.avatar { flex: none; width: 3.75rem; height: 3.75rem; border-radius: 50%; object-fit: cover; border: 2px solid var(--amber); }
+.avatar { flex: none; width: 4.75rem; height: 4.75rem; border-radius: 50%; object-fit: cover; border: 2px solid var(--amber); }
 .hero-actions {
   display: flex; flex-direction: column; align-items: flex-end; gap: .9rem;
   padding: 1.1rem 1.25rem; border-radius: var(--r-md);
@@ -225,6 +220,7 @@ main > section { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 aut
 .grid-koo { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-koo .shot-xl { grid-column: span 2; grid-row: span 2; }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .shot { display: flex; flex-direction: column; gap: 1rem; text-decoration: none; }
 .frame {
@@ -360,6 +356,7 @@ main > section { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 aut
 
 /* ---------- responsive ---------- */
 @media (max-width: 1100px) {
+  .hero-stack { width: 34vw; }
   .tile, .tile-main, .tile-accent { grid-column: span 3; }
   .tile-accent { grid-row: auto; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -367,7 +364,7 @@ main > section { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 aut
 }
 @media (max-width: 860px) {
   .top nav { display: none; }
-  .hero { padding-top: 5.5rem; grid-template-rows: auto auto auto auto; }
+  .hero { padding-top: 5.5rem; grid-template-rows: auto auto auto; }
   .hero-title { margin: 1.75rem 0 0; }
   .hero-title { text-align: center; }
   .hero-stack { position: relative; right: auto; top: auto; width: 100%; margin: 1.5rem 0 0; transform: none; aspect-ratio: 16 / 12.5; }
@@ -378,7 +375,7 @@ main > section { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 aut
   .lead { max-width: none; }
   .hero-actions { align-items: stretch; }
   .hero-actions .btn { width: 100%; }
-  .grid-koo, .grid-3 { grid-template-columns: 1fr; }
+  .grid-koo, .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .grid-koo .shot-xl { grid-column: auto; grid-row: auto; }
   .tile, .tile-main, .tile-accent { grid-column: 1 / -1; }
   .experience, .contact-grid { grid-template-columns: 1fr; }
@@ -386,7 +383,6 @@ main > section { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 aut
 }
 @media (max-width: 560px) {
   .brand-name { display: none; }
-  .hero-meta { font-size: .8125rem; }
   .hero-title { font-size: 9.6vw; line-height: 1.04; }
   .steps, .side-list, .field-row { grid-template-columns: 1fr; }
   .ticker li { padding: .9rem 1.4rem; }
