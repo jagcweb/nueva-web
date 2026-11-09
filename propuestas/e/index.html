@@ -35,7 +35,7 @@
     "@id": "https://jagcweb.es/#jose-antonio",
     "name": "José Antonio García Carmona",
     "url": "https://jagcweb.es/",
-    "image": "https://jagcweb.es/img/avatar.webp",
+    "image": "https://jagcweb.es/img/avatar-v2.webp",
     "jobTitle": "Programador freelance",
     "description": "Desarrollo de software a medida, programas de gestión, webs, aplicaciones y automatización para empresas.",
     "email": "hola@jagcweb.es",
@@ -542,6 +542,40 @@
       .hero-actions .button { width: 100%; justify-content: center; }
       .hero-bottom { display: none; }
     }
+
+    /* WhatsApp flotante */
+    .wa-float { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 90;
+      width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: #25d366;
+      box-shadow: 0 10px 30px -8px rgba(0,0,0,.55); transition: transform .2s ease; }
+    .wa-float:hover { transform: scale(1.07); }
+    .wa-float:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .hero-photo img { object-position: 50% 38%; }
+    @media (max-width: 760px) {
+      .wa-float { width: 54px; height: 54px; }
+      .hero-photo { top: -96px; bottom: 96px; }
+      .hero-photo img { object-position: 50% 12%; }
+    }
+
+    /* Modo oscuro: trabajos y contacto también en oscuro (el lila queda como acento) */
+    [data-theme="dark"] { --paper: #1b1a22; --paper-ink: #f3f1f7; --paper-muted: #b7b4c3; --paper-line: #393745; }
+    [data-theme="dark"] .paper .section-note .index { color: var(--accent); }
+    [data-theme="dark"] .project-visual { background: #26242f !important; }
+    [data-theme="dark"] .project:nth-child(even) .project-visual { background: #23232c !important; }
+    [data-theme="dark"] .paper :focus-visible, [data-theme="dark"] .contact :focus-visible { outline-color: var(--accent); }
+    [data-theme="dark"] .contact { background: radial-gradient(120% 90% at 85% 0%, #2c2442 0%, #1b1824 60%); color: var(--ink); border-top: 1px solid var(--line); }
+    [data-theme="dark"] .contact .section-note .index, [data-theme="dark"] .contact-title .contact-star { color: var(--accent); }
+    [data-theme="dark"] .contact-top { border-bottom-color: var(--line); }
+    [data-theme="dark"] .contact-copy > p, [data-theme="dark"] .contact-location, [data-theme="dark"] .form-note { color: var(--muted); }
+    [data-theme="dark"] .contact-email { border-bottom-color: var(--accent); }
+    [data-theme="dark"] .field input, [data-theme="dark"] .field select, [data-theme="dark"] .field textarea { color: var(--ink); border-bottom-color: #5a5668; background: #ffffff08; }
+    [data-theme="dark"] .field input::placeholder, [data-theme="dark"] .field textarea::placeholder { color: #8f8a9e; }
+    [data-theme="dark"] .field input:focus, [data-theme="dark"] .field select:focus, [data-theme="dark"] .field textarea:focus { border-bottom-color: var(--accent); outline-color: var(--accent); background: #ffffff10; }
+    [data-theme="dark"] .field select option { color: var(--ink); background: #1e1a2b; }
+    [data-theme="dark"] .field-error { color: #ff9db5; }
+    [data-theme="dark"] .contact .button { background: var(--accent); color: var(--accent-ink); --accent: #c5b6fb; }
+
+    .wa-float { transition: transform .2s ease, opacity .3s ease; }
+    .wa-float.oculto { opacity: 0; transform: scale(.6); pointer-events: none; }
 </style>
 </head>
 <body>
@@ -563,7 +597,7 @@
           <svg class="sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
           <svg class="moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.5 14A8.8 8.8 0 0 1 10 3.5 8.8 8.8 0 1 0 20.5 14Z"/></svg>
         </button>
-        <a class="button header-cta magnetic" href="#contacto">Hablemos <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="button header-cta magnetic" href="#contacto">Hablemos</a>
         <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false"><span aria-hidden="true"></span></button>
       </div>
     </div>
@@ -602,8 +636,8 @@
           </h1>
           <p class="hero-description">Desarrollo programas de gestión, webs y automatizaciones para que tu empresa dedique menos tiempo a lo de siempre.</p>
           <div class="hero-actions">
-            <a class="button magnetic" href="#contacto">Cuéntame tu proyecto <span class="arrow" aria-hidden="true">↗</span></a>
-            <a class="button button-ghost" href="tel:+34666225457"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> 666 225 457</a>
+            <a class="button magnetic" href="#contacto">Cuéntame tu proyecto</a>
+            <a class="button button-ghost" href="https://wa.me/34666225457" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> WhatsApp</a>
           </div>
         </div>
       </div>
@@ -825,7 +859,7 @@
             <div class="section-note"><span class="index">04</span> Quién está detrás</div>
             <h2 id="about-title" data-reveal>Un programador.<br>De principio<br>a principio.</h2>
             <div class="about-identity">
-              <img src="../../img/avatar.webp" alt="" width="256" height="256" loading="lazy" decoding="async">
+              <img src="../../img/avatar-v2.webp" alt="" width="256" height="256" loading="lazy" decoding="async">
               <div><strong>José Antonio García Carmona</strong><span>Programador freelance · Madrid</span></div>
             </div>
             <p>Porque cuando un programa empieza a usarse, empieza otra parte del trabajo: acompañarlo y hacerlo evolucionar.</p>
@@ -931,7 +965,7 @@
               </div>
             </div>
             <div class="form-submit">
-              <button class="button magnetic" type="submit">Cuéntame tu proyecto <span class="arrow" aria-hidden="true">↗</span></button>
+              <button class="button magnetic" type="submit">Cuéntame tu proyecto</button>
               <p class="form-note">Se abrirá tu aplicación de correo. Nada se envía hasta que tú lo hagas.</p>
             </div>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -1610,5 +1644,16 @@
   4. Movimiento progresivo con GSAP, Lenis y una malla WebGL; alternativa estática accesible.
   5. Recorrido comercial: resultados, servicios, proceso, experiencia y contacto directo sin intermediarios.
   -->
+
+  <a class="wa-float" href="https://wa.me/34666225457" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg></a>
+
+  <script>
+    // El WhatsApp flotante aparece al salir de la portada (la portada ya tiene su botón)
+    (() => {
+      const wa = document.querySelector('.wa-float'), hero = document.querySelector('.hero');
+      if (!wa || !hero || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([e]) => wa.classList.toggle('oculto', e.intersectionRatio > .35), { threshold: [0, .35, 1] }).observe(hero);
+    })();
+  </script>
 </body>
 </html>
