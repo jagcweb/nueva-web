@@ -968,7 +968,7 @@
         wheelMultiplier: .9,
         touchMultiplier: 1
       });
-      lenis.on("scroll", ST.update);
+      lenis.on("scroll", () => ST.update());
       gs.ticker.add(time => lenis.raf(time * 1000));
       gs.ticker.lagSmoothing(0);
     }
